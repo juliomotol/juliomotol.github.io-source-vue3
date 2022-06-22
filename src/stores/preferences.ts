@@ -13,13 +13,17 @@ export const useCounterStore = defineStore({
     setDarkMode(state: boolean) {
       this.isDarkMode = state;
     },
-    initTheme() {
+    initDarkMode() {
       if (this.isDarkMode === null) {
         this.setDarkMode(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
       }
+
+      document.getElementsByTagName("html")[0].className = this.isDarkMode ? "dark" : "";
     },
     toggleDarkMode() {
       this.setDarkMode(!this.isDarkMode);
+
+      this.initDarkMode();
     },
   },
   persist: {
