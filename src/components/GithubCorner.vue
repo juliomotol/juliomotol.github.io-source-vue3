@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   repo: {
     type: String,
     required: true,
