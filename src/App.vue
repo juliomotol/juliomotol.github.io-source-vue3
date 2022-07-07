@@ -13,9 +13,18 @@
         }"
         ref="overlayScrollbar"
       >
-        <transition mode="out-in" name="fade-out-slide-in">
-          <RouterView />
-        </transition>
+        <RouterView v-slot="{ Component }">
+          <transition
+            mode="out-in"
+            enter-active-class="duration-700 ease-out"
+            enter-from-class="transform translate-x-[-50%]"
+            leave-active-class="duration-200 ease-in"
+            leave-from-class="opacity-100"
+            leave-to-class="transform opacity-0"
+          >
+            <component :is="Component" />
+          </transition>
+        </RouterView>
       </OverlayScrollbars>
     </div>
     <FooterComponent />
