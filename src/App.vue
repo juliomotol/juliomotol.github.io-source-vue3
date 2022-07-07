@@ -1,6 +1,6 @@
 <template>
-  <!-- <DynamicBackground class="absolute top-0 left-0" /> -->
-  <div class="flex flex-col bg-gradient-to-r from-orange to-orange-light">
+  <div class="relative flex flex-col">
+    <div class="flex flex-col bg-gradient-to-r from-orange to-orange-light">
     <div class="overflow-hidden">
       <NavigationComponent />
       <!-- <GithubCorner repo="juliomotol/juliomotol.github.io-source" /> -->
@@ -26,8 +26,9 @@
           </transition>
         </RouterView>
       </OverlayScrollbars>
+      <FooterComponent />
     </div>
-    <FooterComponent />
+    <DynamicBackground class="absolute top-0 left-0 w-full" />
   </div>
 </template>
 
