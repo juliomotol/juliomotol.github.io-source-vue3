@@ -27,6 +27,10 @@ module.exports = {
             p: {
               "font-family": theme('fontFamily.serif'),
             },
+            a: {
+              color: theme('colors.orange'),
+              "text-decoration": "none",
+            }
           },
         },
       }),
