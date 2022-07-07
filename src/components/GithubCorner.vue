@@ -1,13 +1,7 @@
 <template>
-  <a
-    class="github-corner"
-    :href="'https://github.com/' + repo"
-    target="_blank"
-    rel="noreferrer noopenner"
-    aria-label="View source on GitHub"
-  >
+  <a :href="'https://github.com/' + repo" target="_blank" rel="noreferrer noopenner" aria-label="View source on GitHub">
     <svg
-      class="group fill-[#151513] text-white absolute top-0 border-0 right-0"
+      :class="['group fill-[#151513] text-white border-0', $attrs.class]"
       width="80"
       height="80"
       viewBox="0 0 250 250"
@@ -36,4 +30,10 @@ defineProps({
     required: true,
   },
 });
+</script>
+
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
 </script>
