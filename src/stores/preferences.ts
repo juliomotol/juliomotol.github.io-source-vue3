@@ -4,7 +4,7 @@ interface State {
   isDarkMode: boolean | null;
 }
 
-export const useCounterStore = defineStore({
+export const usePreferenceStore = defineStore({
   id: "preferences",
   state: (): State => ({
     isDarkMode: null,
@@ -31,8 +31,5 @@ export const useCounterStore = defineStore({
       this.initDarkMode();
     },
   },
-  persist: {
-    key: "jm",
-    paths: ["preferences"],
-  },
+  persist: true,
 });

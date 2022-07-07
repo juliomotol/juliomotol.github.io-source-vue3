@@ -1,10 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: "Open Sans, Helvetica, Arial, sans-serif",
+      serif: "Roboto Slab, serif",
+    },
     extend: {
+      colors: {
+        orange: "#f63",
+        "orange-light": "#f85",
+      },
       animation: {
-        "octocat-wave": "octocat-wave 560ms ease-in-out",
+        "octocat-wave": "octocat-wave 750ms ease-in-out",
       },
       keyframes: {
         "octocat-wave": {
@@ -13,8 +21,17 @@ export default {
           "40%, 80%": { transform: "rotate(10deg)" },
         },
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            p: {
+              "font-family": theme('fontFamily.serif'),
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
   darkMode: "class",
 };
