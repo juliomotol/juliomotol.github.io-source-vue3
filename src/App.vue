@@ -1,11 +1,11 @@
 <template>
-  <div class="relative flex flex-col">
-    <div class="flex flex-col bg-gradient-to-r from-orange to-orange-light">
+  <div class="relative flex flex-col bg-orange-light lg:flex-row">
+    <div class="flex flex-col bg-gradient-to-r from-orange to-orange-light lg:w-1/2 lg:z-10">
       <NavigationComponent />
-      <GithubCorner repo="juliomotol/juliomotol.github.io-source" class="z-30 absolute top-14 right-0" />
-      <div class="h-[calc(100vw-56px)]"></div>
+      <GithubCorner repo="juliomotol/juliomotol.github.io-source" class="z-30 absolute top-14 right-0 lg:top-0" />
+      <div class="h-[calc(100vw-56px)] sm:h-[calc(100vw*0.8-56px)] lg:hidden"></div>
       <OverlayScrollbars
-        class="min-h-[calc(100vh-100vw-40px)] rounded-br-3xl bg-gradient-to-b from-white to-zinc-300"
+        class="rounded-br-3xl bg-gradient-to-b from-white to-zinc-300 lg:min-h-[calc(100vh-40px-56px)]"
         :options="{
           className: preferences.isDarkMode ? 'os-theme-light' : 'os-theme-dark',
           overflowBehavior: { x: 'hidden' },
@@ -21,13 +21,18 @@
             leave-from-class="opacity-100"
             leave-to-class="transform opacity-0"
           >
-            <component :is="Component" />
+            <component
+              :is="Component"
+              class="min-h-[calc(100vh-100vw-40px)] sm:min-h-[calc(100vh-100vw*0.8-40px)] lg:min-h-[calc(100vh-40px-56px)]"
+            />
           </transition>
         </RouterView>
       </OverlayScrollbars>
       <FooterComponent />
     </div>
-    <DynamicBackground class="absolute top-0 left-0 w-full h-[100vw]" />
+    <DynamicBackground
+      class="absolute top-0 left-0 w-full h-[100vw] sm:h-[calc(100vw*0.8)] lg:static lg:w-1/2 lg:h-screen"
+    />
   </div>
 </template>
 
