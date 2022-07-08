@@ -7,23 +7,42 @@
       or follow me to keep in the touch with the following social media site.
     </p>
     <InlineList class="not-prose">
-      <!-- href="https://www.facebook.com/juliomotol89" -->
-      <ButtonComponent class="bg-[#3b5998]">
+      <ButtonComponent
+        is="a"
+        href="https://www.facebook.com/juliomotol89"
+        class="bg-[#3b5998]"
+        target="_blank"
+        rel="noreferrer noopenner"
+      >
         <IconFacebook class="w-4 h-4 fill-white inline mr-2 align-middle" />
         <span>Facebook</span>
       </ButtonComponent>
-      <!-- href="https://www.instagram.com/julio.motol/" -->
-      <ButtonComponent class="bg-gradient-to-r from-[#feda77] via-[#f58529,#dd2a7b,#8134af] to-[#515bd4]">
+      <ButtonComponent
+        is="a"
+        href="https://www.instagram.com/julio.motol/"
+        class="bg-gradient-to-r from-[#feda77] via-[#f58529,#dd2a7b,#8134af] to-[#515bd4]"
+        target="_blank"
+        rel="noreferrer noopenner"
+      >
         <IconInstagram class="w-4 h-4 fill-white inline mr-2 align-middle" />
         <span>Instagram</span>
       </ButtonComponent>
-      <!-- href="https://github.com/juliomotol" -->
-      <ButtonComponent class="bg-[#24292e]">
+      <ButtonComponent
+        is="a"
+        href="https://github.com/juliomotol"
+        class="bg-[#24292e]"
+        target="_blank"
+        rel="noreferrer noopenner"
+      >
         <IconGithub class="w-4 h-4 fill-white inline mr-2 align-middle" />
         <span>GitHub</span>
       </ButtonComponent>
-      <!-- href="https://stackoverflow.com/users/4672917/julio-motol" -->
-      <ButtonComponent>
+      <ButtonComponent
+        is="a"
+        href="https://stackoverflow.com/users/4672917/julio-motol"
+        target="_blank"
+        rel="noreferrer noopenner"
+      >
         <IconStackOverflow class="w-4 h-4 fill-white inline mr-2 align-middle" />
         <span>Stack Overflow</span>
       </ButtonComponent>

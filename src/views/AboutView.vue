@@ -46,7 +46,7 @@
       <BadgeComponent>Music</BadgeComponent>
     </InlineList>
     <InlineList>
-      <ButtonComponent>See what I can do</ButtonComponent>
+      <ButtonComponent :is="RouterLink" :to="{ name: 'works' }">See what I can do</ButtonComponent>
     </InlineList>
   </main>
 </template>
@@ -55,4 +55,5 @@
 import BadgeComponent from "@/components/BadgeComponent.vue";
 import InlineList from "../components/InlineList.vue";
 import ButtonComponent from "../components/ButtonComponent.vue";
+import { RouterLink } from "vue-router";
 </script>

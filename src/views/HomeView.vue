@@ -7,8 +7,8 @@
     <h1 class="text-4xl mb-6">Full Stack Developer</h1>
     <div class="buttons">
       <InlineList>
-        <ButtonComponent>About Me</ButtonComponent>
-        <ButtonComponent outlined>Get in touch</ButtonComponent>
+        <ButtonComponent :is="RouterLink" :to="{ name: 'about' }">About Me</ButtonComponent>
+        <ButtonComponent :is="RouterLink" :to="{ name: 'contact' }" outlined>Get in touch</ButtonComponent>
       </InlineList>
 
       <!-- <RouterLink :to="{ name: 'about' }" class="button is-primary">About me</RouterLink> -->
@@ -21,4 +21,5 @@
 import ButtonComponent from "@/components/ButtonComponent.vue";
 import InlineList from "../components/InlineList.vue";
 import DarkmodeSwapper from "../components/DarkmodeSwapper.vue";
+import { RouterLink } from "vue-router";
 </script>
