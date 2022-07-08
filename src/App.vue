@@ -40,7 +40,7 @@
     </div>
     <DynamicBackground
       :class="[
-        'absolute top-0 left-0 w-full h-[100vw] sm:h-[calc(100vw*0.8)] lg:static lg:w-1/2 lg:h-screen lg:transition-all lg:duration-500 ease-out',
+        'absolute top-0 left-0 w-full h-[100vw] sm:h-[calc(100vw*0.8)] lg:relative lg:w-1/2 lg:h-screen lg:transition-all lg:duration-500 ease-out',
         page.isFullPage ? ' lg:w-0' : 'lg:w-1/2',
       ]"
     />

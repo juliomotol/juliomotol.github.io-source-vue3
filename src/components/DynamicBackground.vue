@@ -1,25 +1,23 @@
 <template>
-  <div>
+  <div class="relative">
     <img
       v-if="isLoading && oldImage"
-      class="select-none absolute block object-cover h-[inherit]"
-      :src="isValidUrl(oldImage) ? oldImage : 'data:image/png;base64,' + oldImage"
-      alt="background image"
-      :style="{ right: backgroundOffset + 'px' }"
+      class="select-none absolute block object-cover object-center w-full h-[inherit]"
+      :src="oldImage"
+      alt="background image peristed"
     />
     <transition
       mode="out-in"
       enter-active-class="duration-200 ease-in"
-      enter-from-class="transform opacity-0"
+      enter-from-class="transform-[opacity] opacity-0"
       @before-leave="isLoading = true"
       @after-enter="isLoading = false"
     >
       <img
         v-if="currentImage"
-        class="select-none absolute block object-cover h-[inherit]"
-        :src="isValidUrl(currentImage) ? currentImage : 'data:image/jpg;base64,' + currentImage"
+        class="select-none absolute block object-cover object-center w-full h-[inherit]"
+        :src="currentImage"
         alt="background image"
-        :style="{ right: backgroundOffset + 'px' }"
         ref="image"
       />
     </transition>
@@ -28,22 +26,21 @@
 
 <script setup lang="ts">
 import { usePageStore } from "@/stores/page";
-import { ref, watch, onMounted } from "vue";
+import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import Axios from "axios";
 
 const route = useRoute();
 const page = usePageStore();
 const backgroundIncrements = ref(0);
-const backgroundOffset = ref(0);
 const isLoading = ref(false);
-const image = ref<HTMLInputElement | null>(null);
 const oldImage = ref("");
 const currentImage = ref("");
 
 watch(
   () => route.name,
   async () => {
+    URL.revokeObjectURL(oldImage.value);
     oldImage.value = currentImage.value;
     currentImage.value = "";
 
@@ -61,24 +58,9 @@ watch(
 
 async function fetchImage() {
   const response = await Axios.get("https://source.unsplash.com/user/juliomotol?load=" + backgroundIncrements.value, {
-    responseType: "arraybuffer",
+    responseType: "blob",
   });
 
-  return btoa(String.fromCharCode(...new Uint8Array(response.data)));
+  return URL.createObjectURL(response.data);
 }
-
-function isValidUrl(string: string) {
-  try {
-    const url = new URL(string);
-    return url.protocol === "http:" || url.protocol === "https:";
-  } catch (_) {
-    return false;
-  }
-}
-
-onMounted(() => {
-  image.value?.addEventListener("load", () => {
-    backgroundOffset.value = ((image.value?.width || 0) - (image.value?.height || 0)) / -2;
-  });
-});
 </script>
