@@ -2,7 +2,7 @@
   <div>
     <img
       v-if="isLoading && oldImage"
-      class="select-none absolute block object-cover h-[100vw] w-screen"
+      class="select-none absolute block object-cover h-[inherit]"
       :src="isValidUrl(oldImage) ? oldImage : 'data:image/png;base64,' + oldImage"
       alt="background image"
       :style="{ right: backgroundOffset + 'px' }"
@@ -16,7 +16,7 @@
     >
       <img
         v-if="currentImage"
-        class="select-none absolute block object-cover h-[100vw] w-screen"
+        class="select-none absolute block object-cover h-[inherit]"
         :src="isValidUrl(currentImage) ? currentImage : 'data:image/jpg;base64,' + currentImage"
         alt="background image"
         :style="{ right: backgroundOffset + 'px' }"

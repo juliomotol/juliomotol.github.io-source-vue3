@@ -27,7 +27,7 @@
       </OverlayScrollbars>
       <FooterComponent />
     </div>
-    <DynamicBackground class="absolute top-0 left-0 w-full" />
+    <DynamicBackground class="absolute top-0 left-0 w-full h-[100vw]" />
   </div>
 </template>
 
