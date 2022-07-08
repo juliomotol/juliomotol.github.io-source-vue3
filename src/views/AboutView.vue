@@ -35,7 +35,7 @@
       active in my personal and leisure activites despite my workloads. Below are what drives me to work harder
       everyday.
     </p>
-    <InlineList class="not-prose mb-3">
+    <InlineList class="not-prose">
       <BadgeComponent>Motorcycles</BadgeComponent>
       <BadgeComponent>Photography</BadgeComponent>
       <BadgeComponent>Graphic Design</BadgeComponent>
