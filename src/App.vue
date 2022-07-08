@@ -1,8 +1,16 @@
 <template>
-  <div class="relative flex flex-col bg-orange-light lg:flex-row">
-    <div class="flex flex-col bg-gradient-to-r from-orange to-orange-light lg:w-1/2 lg:z-10">
+  <div class="relative flex flex-col bg-orange-light lg:flex-row w-full overflow-hidden">
+    <div
+      :class="[
+        'flex flex-col bg-gradient-to-r from-orange to-orange-light lg:z-10 lg:transition-all lg:duration-500 ease-out',
+        page.isFullPage ? ' lg:w-full' : 'lg:w-1/2',
+      ]"
+    >
       <NavigationComponent />
-      <GithubCorner repo="juliomotol/juliomotol.github.io-source" class="z-30 absolute top-14 right-0 lg:top-0" />
+      <GithubCorner
+        repo="juliomotol/juliomotol.github.io-source-next"
+        class="absolute top-14 right-0 z-10 lg:z-auto lg:top-0"
+      />
       <div class="h-[calc(100vw-56px)] sm:h-[calc(100vw*0.8-56px)] lg:hidden"></div>
       <OverlayScrollbars
         class="rounded-br-3xl bg-gradient-to-b from-white to-zinc-300 lg:min-h-[calc(100vh-40px-56px)]"
@@ -31,7 +39,10 @@
       <FooterComponent />
     </div>
     <DynamicBackground
-      class="absolute top-0 left-0 w-full h-[100vw] sm:h-[calc(100vw*0.8)] lg:static lg:w-1/2 lg:h-screen"
+      :class="[
+        'absolute top-0 left-0 w-full h-[100vw] sm:h-[calc(100vw*0.8)] lg:static lg:w-1/2 lg:h-screen lg:transition-all lg:duration-500 ease-out',
+        page.isFullPage ? ' lg:w-0' : 'lg:w-1/2',
+      ]"
     />
   </div>
 </template>
