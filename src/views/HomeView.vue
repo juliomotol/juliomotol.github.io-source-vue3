@@ -1,7 +1,9 @@
 <template>
   <main class="p-8 lg:px-16 min-h-[calc(100vh-100vw-40px)] flex flex-col justify-center">
-    <img v-if="preferences.isDarkMode" class="mb-2" src="../assets/logo_banner_light.svg" alt="logo_banner" />
-    <img v-else class="mb-2" src="../assets/logo_banner.svg" alt="logo_banner" />
+    <DarkmodeSwapper v-slot="{ isDarkMode }">
+      <img v-if="isDarkMode" class="mb-2" src="../assets/logo_banner_light.svg" alt="logo_banner" />
+      <img v-else class="mb-2" src="../assets/logo_banner.svg" alt="logo_banner" />
+    </DarkmodeSwapper>
     <h1 class="text-4xl mb-6">Full Stack Developer</h1>
     <div class="buttons">
       <InlineList>
@@ -17,8 +19,6 @@
 
 <script setup lang="ts">
 import ButtonComponent from "@/components/ButtonComponent.vue";
-import { usePreferenceStore } from "@/stores/preferences";
 import InlineList from "../components/InlineList.vue";
-
-const preferences = usePreferenceStore();
+import DarkmodeSwapper from "../components/DarkmodeSwapper.vue";
 </script>
