@@ -1,5 +1,5 @@
 <template>
-  <main class="p-8 lg:px-16 prose">
+  <main class="p-8 lg:px-16 prose dark:prose-invert">
     <h1>Get in touch</h1>
     <h2>Social Accounts</h2>
     <p>

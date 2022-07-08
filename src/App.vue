@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col bg-orange-light lg:flex-row w-full overflow-hidden">
+  <div class="relative flex flex-col bg-orange-light lg:flex-row w-full overflow-hidden dark:text-white">
     <div
       :class="[
         'flex flex-col bg-gradient-to-r from-orange to-orange-light lg:z-10 lg:transition-all lg:duration-500 ease-out',
@@ -13,7 +13,7 @@
       />
       <div class="h-[calc(100vw-56px)] sm:h-[calc(100vw*0.8-56px)] lg:hidden"></div>
       <OverlayScrollbars
-        class="rounded-br-3xl bg-gradient-to-b from-white to-zinc-300 lg:min-h-[calc(100vh-40px-56px)]"
+        class="rounded-br-3xl bg-gradient-to-b from-white to-neutral-300 lg:min-h-[calc(100vh-40px-56px)] dark:from-neutral-800 dark:to-neutral-900"
         :options="{
           className: preferences.isDarkMode ? 'os-theme-light' : 'os-theme-dark',
           overflowBehavior: { x: 'hidden' },

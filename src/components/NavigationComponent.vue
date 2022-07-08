@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-14 flex items-stretch bg-white relative z-30 text-gray-600"
+    class="h-14 flex items-stretch bg-white relative z-30 text-gray-600 dark:bg-neutral-800 dark:text-gray-300"
     role="navigation"
     aria-label="main navigation"
   >
@@ -16,12 +16,12 @@
       <NavigationLink :to="{ name: 'about' }">about</NavigationLink>
       <NavigationLink :to="{ name: 'works' }">works</NavigationLink>
       <NavigationLink :to="{ name: 'contact' }">contact</NavigationLink>
-      <div class="cursor-pointer flex items-center py-2 px-3" @click="preferences.toggleDarkMode()">
+      <button class="flex items-center py-2 px-3" @click="preferences.toggleDarkMode()">
         <DarkmodeSwapper v-slot="{ isDarkMode }">
-          <IconSun v-if="isDarkMode" class="w-5 h-5 fill-gray-600" />
-          <IconMoon v-else class="w-5 h-5 fill-gray-600" />
+          <IconSun v-if="isDarkMode" class="w-5 h-5 fill-gray-600 hover:fill-orange dark:fill-gray-300" />
+          <IconMoon v-else class="w-5 h-5 fill-gray-600 hover:fill-orange dark:fill-gray-300" />
         </DarkmodeSwapper>
-      </div>
+      </button>
     </div>
   </nav>
 </template>
