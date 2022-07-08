@@ -4,8 +4,7 @@ interface State {
   isDarkMode: boolean | null;
 }
 
-export const usePreferenceStore = defineStore({
-  id: "preferences",
+export const usePreferenceStore = defineStore("preferences", {
   state: (): State => ({
     isDarkMode: null,
   }),
@@ -15,15 +14,10 @@ export const usePreferenceStore = defineStore({
     },
     initDarkMode() {
       if (this.isDarkMode === null) {
-        this.setDarkMode(
-          window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-        );
+        this.setDarkMode(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
       }
 
-      document.getElementsByTagName("html")[0].className = this.isDarkMode
-        ? "dark"
-        : "";
+      document.getElementsByTagName("html")[0].className = this.isDarkMode ? "dark" : "";
     },
     toggleDarkMode() {
       this.setDarkMode(!this.isDarkMode);

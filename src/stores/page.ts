@@ -5,8 +5,7 @@ interface State {
   backgroundImage: string | null;
 }
 
-export const usePageStore = defineStore({
-  id: "preferences",
+export const usePageStore = defineStore("page", {
   state: (): State => ({
     isFullPage: false,
     backgroundImage: null,
