@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div>
     <img
       v-if="isLoading && oldImage"
       class="select-none absolute block object-cover object-center w-full h-[inherit]"
