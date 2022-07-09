@@ -1,26 +1,30 @@
 import { usePageStore } from "@/stores/page";
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 
 interface PageOptions {
   isFullpage?: boolean;
   backgroundImage?: string;
 }
 
-export function usePage(options: PageOptions) {
+export function usePage(options?: PageOptions) {
   const page = usePageStore();
 
-  onMounted(init);
+  const isFullpage = ref<boolean>(options?.isFullpage ?? false);
+  const backgroundImage = ref<string>(options?.backgroundImage ?? "");
+
   onUnmounted(destroy);
 
-  function init() {
-    page.setIsFullPage(options.isFullpage ?? false);
-    page.setBackgroundImage(options.backgroundImage ?? null);
-  }
+  watch(isFullpage, (value) => page.setIsFullPage(value), {
+    immediate: true,
+  });
+  watch(backgroundImage, (value) => page.setBackgroundImage(value), {
+    immediate: true,
+  });
 
   function destroy() {
     page.setIsFullPage(false);
     page.setBackgroundImage(null);
   }
 
-  return { page };
+  return { page, isFullpage, backgroundImage };
 }
