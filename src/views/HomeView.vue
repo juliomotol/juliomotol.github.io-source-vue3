@@ -10,9 +10,6 @@
         <ButtonComponent :is="RouterLink" :to="{ name: 'about' }">About Me</ButtonComponent>
         <ButtonComponent :is="RouterLink" :to="{ name: 'contact' }" outlined>Get in touch</ButtonComponent>
       </InlineList>
-
-      <!-- <RouterLink :to="{ name: 'about' }" class="button is-primary">About me</RouterLink> -->
-      <!-- <RouterLink :to="{ name: 'contact' }" class="button is-primary is-outlined">Get in touch</RouterLink> -->
     </div>
   </main>
 </template>

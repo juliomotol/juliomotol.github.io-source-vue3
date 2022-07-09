@@ -46,7 +46,7 @@
       <BadgeComponent>Music</BadgeComponent>
     </InlineList>
     <InlineList>
-      <ButtonComponent :is="RouterLink" :to="{ name: 'works' }">See what I can do</ButtonComponent>
+      <ButtonComponent :is="RouterLink" :to="{ name: 'works.index' }">See what I can do</ButtonComponent>
     </InlineList>
   </main>
 </template>

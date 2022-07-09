@@ -14,7 +14,7 @@
     </div>
     <div class="grow flex items-stretch justify-end">
       <NavigationLink :to="{ name: 'about' }">about</NavigationLink>
-      <NavigationLink :to="{ name: 'works' }">works</NavigationLink>
+      <NavigationLink :to="{ name: 'works.index' }">works</NavigationLink>
       <NavigationLink :to="{ name: 'contact' }">contact</NavigationLink>
       <button class="flex items-center py-2 px-3" @click="preferences.toggleDarkMode()">
         <DarkmodeSwapper v-slot="{ isDarkMode }">

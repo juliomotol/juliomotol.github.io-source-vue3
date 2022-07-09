@@ -16,13 +16,21 @@ const router = createRouter({
     },
     {
       path: "/works",
-      name: "works",
-      component: () => import("../views/WorksView.vue"),
-    },
-    {
-      path: "/works/:slug",
-      name: "works-article",
-      component: () => import("../views/WorksArticleView.vue"),
+      children: [
+          {
+            path: "",
+            name: "works.index",
+            component: () => import("../views/WorksView.vue"),
+            meta: {
+              title: "Works"
+            }
+          },
+        {
+          path: ":slug",
+          name: "works.show",
+          component: () => import("../views/WorksArticleView.vue"),
+        },
+      ],
     },
     {
       path: "/contact",
