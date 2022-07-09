@@ -1,9 +1,6 @@
 ---
     title: React Cheatsheet
     description: React cheatsheet inspired by overapi.com
-    slug: react-cheatsheet
-    thumbnail: rcs-preview.jpg
-    preview: rcs-preview.jpg
     publishDate: 2020-06-25T14:33:32Z
     tags: [React, Material UI]
 ---

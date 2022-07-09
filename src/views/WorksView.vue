@@ -7,7 +7,7 @@
           <div class="aspect-[4/3] not-prose">
             <img
               class="aspect-[inherit] object-cover"
-              :src="work.thumbnail || 'https://bulma.io/images/placeholders/1280x960.png'"
+              :src="work.preview || 'https://bulma.io/images/placeholders/1280x960.png'"
             />
           </div>
         </template>
@@ -46,37 +46,14 @@ import BadgeComponent from "../components/BadgeComponent.vue";
 import InlineList from "../components/InlineList.vue";
 import CardComponent from "../components/CardComponent.vue";
 import { onMounted, ref } from "vue";
-
-interface WorkConfig {
-  title: string;
-  description: string;
-  slug: string;
-  thumbnail: string;
-  preview: string;
-  publishDate: Date;
-  tags: Array<string>;
-}
+import { getWorks, type WorkConfig } from "../helpers/works";
 
 usePage({ isFullpage: true });
 
-const works = ref<Array<WorkConfig>>([]);
+const works = ref<WorkConfig[]>([]);
 
 onMounted(async () => {
-  const workMardowns = import.meta.glob("/articles/*/*.md");
-
-  for (const path in workMardowns) {
-    const { frontmatter } = await workMardowns[path]();
-
-    const thumbnail = (await import(`/articles/${frontmatter.slug}/${frontmatter.thumbnail}`)).default;
-    const preview = (await import(`/articles/${frontmatter.slug}/${frontmatter.preview}`)).default;
-
-    works.value.push({
-      ...frontmatter,
-      publishDate: new Date(frontmatter.publishDate),
-      thumbnail,
-      preview,
-    });
-  }
+  works.value = await getWorks();
   sortWorksByPublishDate();
 });
 

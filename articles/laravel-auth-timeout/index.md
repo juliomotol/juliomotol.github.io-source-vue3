@@ -1,9 +1,6 @@
 ---
     title: Laravel Auth Timeout
     description: A small Laravel 6+ package that handles Authentication Timeouts.
-    slug: laravel-auth-timeout
-    thumbnail: lato-preview.jpg
-    preview: lato-preview.jpg
     publishDate: 2020-04-04 14:19 UTC
     tags: [Laravel]
 ---

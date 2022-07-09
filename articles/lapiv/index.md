@@ -1,9 +1,6 @@
 ---
     title: Lapiv
     description: A Small Laravel 6+ package for a simple and easy API versioning
-    slug: lapiv
-    thumbnail: lapiv-preview.jpg
-    preview: lapiv-preview.jpg
     publishDate: 2020-09-19
     tags: [Laravel]
 ---

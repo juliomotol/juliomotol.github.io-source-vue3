@@ -1,9 +1,6 @@
 ---
     title: juliomotol.github.io
     description: A personal portfolio website
-    slug: juliomotol.github.io
-    thumbnail: preview.jpg
-    preview: preview.jpg
     publishDate: 2020-02-22T06:28:10Z
     tags: [Vue.js, Bulma]
 ---
