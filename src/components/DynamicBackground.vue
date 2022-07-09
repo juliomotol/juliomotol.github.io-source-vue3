@@ -2,7 +2,7 @@
   <div>
     <img
       v-if="isLoading && oldImage"
-      class="select-none absolute block object-cover object-center w-full h-[inherit]"
+      class="select-none absolute block object-cover object-center w-full h-[inherit] aspect-[inherit]"
       :src="oldImage"
       alt="background image peristed"
     />
@@ -15,7 +15,7 @@
     >
       <img
         v-if="currentImage"
-        class="select-none absolute block object-cover object-center w-full h-[inherit]"
+        class="select-none absolute block object-cover object-center w-full h-[inherit] aspect-[inherit]"
         :src="currentImage"
         alt="background image"
         ref="image"
