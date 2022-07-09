@@ -32,7 +32,6 @@ import Axios from "axios";
 
 const route = useRoute();
 const page = usePageStore();
-const backgroundIncrements = ref(0);
 const isLoading = ref(false);
 const oldImage = ref("");
 const currentImage = ref("");
@@ -44,20 +43,24 @@ watch(
     oldImage.value = currentImage.value;
     currentImage.value = "";
 
+    const image = await fetchImage();
+
     if (page.backgroundImage) {
       currentImage.value = page.backgroundImage;
 
       return;
     }
 
-    backgroundIncrements.value++;
-
-    currentImage.value = await fetchImage();
+    currentImage.value = image;
   }
 );
 
+page.$subscribe((mutation, state) => {
+  currentImage.value = state.backgroundImage ?? "";
+});
+
 async function fetchImage() {
-  const response = await Axios.get("https://source.unsplash.com/user/juliomotol?load=" + backgroundIncrements.value, {
+  const response = await Axios.get("https://source.unsplash.com/user/juliomotol", {
     responseType: "blob",
   });
 
