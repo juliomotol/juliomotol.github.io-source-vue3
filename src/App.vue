@@ -31,7 +31,10 @@
           >
             <component
               :is="Component"
-              class="min-h-[calc(100vh-100vw-40px)] sm:min-h-[calc(100vh-100vw*0.8-40px)] lg:min-h-[calc(100vh-40px-56px)]"
+              :class="[
+                'min-h-[calc(100vh-100vw-40px)] sm:min-h-[calc(100vh-100vw*0.8-40px)] lg:min-h-[calc(100vh-40px-56px)]',
+                page.isFullPage ? ' lg:w-[100vw]' : 'lg:w-[50vw]',
+              ]"
             />
           </transition>
         </RouterView>
