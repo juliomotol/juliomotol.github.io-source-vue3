@@ -62,4 +62,6 @@ import DynamicBackground from "./components/DynamicBackground.vue";
 
 const preferences = usePreferenceStore();
 const page = usePageStore();
+
+preferences.initDarkMode();
 </script>
