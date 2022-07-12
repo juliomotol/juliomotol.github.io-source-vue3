@@ -17,18 +17,15 @@ const router = createRouter({
     {
       path: "/works",
       children: [
-          {
-            path: "",
-            name: "works.index",
-            component: () => import("../views/WorksView.vue"),
-            meta: {
-              title: "Works"
-            }
-          },
+        {
+          path: "",
+          name: "works.index",
+          component: () => import("../views/WorksView.vue"),
+        },
         {
           path: ":slug",
           name: "works.show",
-          component: () => import("../views/WorksArticleView.vue"),
+          component: () => import("../views/WorkArticleView.vue"),
         },
       ],
     },
