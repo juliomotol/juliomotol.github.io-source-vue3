@@ -1,8 +1,13 @@
 <template>
-  <div class="relative flex flex-col bg-orange-light lg:flex-row w-full overflow-hidden dark:text-white">
+  <div
+    :class="[
+      'relative flex flex-col bg-orange-light lg:flex-row w-full overflow-hidden',
+      preferences.isDarkMode ? 'dark' : '',
+    ]"
+  >
     <div
       :class="[
-        'flex flex-col bg-gradient-to-r from-orange to-orange-light lg:z-10 lg:transition-all lg:duration-500 ease-out',
+        'flex flex-col bg-gradient-to-r from-orange to-orange-light lg:z-10 lg:transition-all lg:duration-500 ease-out dark:text-white',
         page.isFullPage ? ' lg:w-full' : 'lg:w-1/2',
       ]"
     >
@@ -62,6 +67,4 @@ import DynamicBackground from "./components/DynamicBackground.vue";
 
 const preferences = usePreferenceStore();
 const page = usePageStore();
-
-preferences.initDarkMode();
 </script>
