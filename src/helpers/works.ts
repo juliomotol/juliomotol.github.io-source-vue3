@@ -20,7 +20,7 @@ interface WorkMarkdownRaw {
 }
 
 export async function getWorkFrontmatters(): Promise<WorkFrontmatter[]> {
-  const workMarkdowns = import.meta.glob("../../articles/*/index.md");
+  const workMarkdowns = import.meta.glob("../../works/*/index.md");
   const works: WorkFrontmatter[] = [];
 
   for (const path in workMarkdowns) {
@@ -36,8 +36,8 @@ export async function getWorkFrontmatters(): Promise<WorkFrontmatter[]> {
 
 export async function getWorkBySlug(slug: string): Promise<WorkMarkdown> {
   return await getWorkMarkdown(
-    `../../articles/${slug}/index.md`,
-    await import(`../../articles/${slug}/index.md`)
+    `../../works/${slug}/index.md`,
+    await import(`../../works/${slug}/index.md`)
   );
 }
 
@@ -46,9 +46,9 @@ async function getWorkMarkdown(
   markdown: WorkMarkdownRaw
 ): Promise<WorkMarkdown> {
   const { frontmatter } = markdown;
-  const matches = path.match(/articles\/(.*)\//);
+  const matches = path.match(/works\/(.*)\//);
   const slug = matches !== null ? matches[1] : "";
-  const preview = (await import(`../../articles/${slug}/preview.jpg`)).default;
+  const preview = (await import(`../../works/${slug}/preview.jpg`)).default;
 
   return {
     ...markdown,

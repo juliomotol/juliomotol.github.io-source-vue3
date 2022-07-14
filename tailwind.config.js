@@ -24,14 +24,14 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            maxWidth: 'none',
+            maxWidth: "none",
             p: {
-              "font-family": theme('fontFamily.serif'),
+              "font-family": theme("fontFamily.serif"),
             },
             a: {
-              color: theme('colors.orange'),
+              color: theme("colors.orange"),
               "text-decoration": "none",
-            }
+            },
           },
         },
       }),
