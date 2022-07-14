@@ -10,12 +10,4 @@ export const usePageStore = defineStore("page", {
     isFullPage: false,
     backgroundImage: null,
   }),
-  actions: {
-    setIsFullPage(state: boolean) {
-      this.isFullPage = state;
-    },
-    setBackgroundImage(url: string | null = null) {
-      this.backgroundImage = url;
-    },
-  },
 });

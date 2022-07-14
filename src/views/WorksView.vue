@@ -57,7 +57,7 @@ import CardComponent from "../components/CardComponent.vue";
 import { ref } from "vue";
 import { getWorkFrontmatters, type WorkFrontmatter } from "../helpers/works";
 
-usePage({ isFullpage: true });
+usePage({ isFullPage: true });
 
 const works = ref<WorkFrontmatter[]>([]);
 
