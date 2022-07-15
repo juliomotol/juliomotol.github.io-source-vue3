@@ -1,5 +1,10 @@
 <template>
-  <a :href="'https://github.com/' + repo" target="_blank" rel="noreferrer noopenner" aria-label="View source on GitHub">
+  <a
+    :href="'https://github.com/' + repo"
+    target="_blank"
+    rel="noreferrer noopenner"
+    aria-label="View source on GitHub"
+  >
     <svg
       :class="['group fill-[#151513] text-white border-0', $attrs.class]"
       width="80"

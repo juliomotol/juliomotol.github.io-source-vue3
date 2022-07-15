@@ -16,11 +16,15 @@
         repo="juliomotol/juliomotol.github.io-source-next"
         class="absolute top-14 right-0 z-10 lg:z-auto lg:top-0"
       />
-      <div class="h-[calc(100vw-56px)] sm:h-[calc(100vw*0.8-56px)] lg:hidden"></div>
+      <div
+        class="h-[calc(100vw-56px)] sm:h-[calc(100vw*0.8-56px)] lg:hidden"
+      ></div>
       <OverlayScrollbars
         class="rounded-br-3xl bg-gradient-to-b from-white to-neutral-300 lg:min-h-[calc(100vh-40px-56px)] dark:from-neutral-800 dark:to-neutral-900"
         :options="{
-          className: preferences.isDarkMode ? 'os-theme-light' : 'os-theme-dark',
+          className: preferences.isDarkMode
+            ? 'os-theme-light'
+            : 'os-theme-dark',
           overflowBehavior: { x: 'hidden' },
         }"
         ref="overlayScrollbar"

@@ -60,9 +60,12 @@ page.$subscribe((mutation, state) => {
 });
 
 async function fetchImage() {
-  const response = await Axios.get("https://source.unsplash.com/user/juliomotol", {
-    responseType: "blob",
-  });
+  const response = await Axios.get(
+    "https://source.unsplash.com/user/juliomotol",
+    {
+      responseType: "blob",
+    }
+  );
 
   return URL.createObjectURL(response.data);
 }

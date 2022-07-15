@@ -1,5 +1,10 @@
 <template>
-  <component v-if="is" :is="is" v-bind="$attrs" :class="[...styles, $attrs.class]">
+  <component
+    v-if="is"
+    :is="is"
+    v-bind="$attrs"
+    :class="[...styles, $attrs.class]"
+  >
     <slot></slot>
   </component>
   <button v-else :class="[...styles, $attrs.class]">
@@ -17,7 +22,9 @@ const props = defineProps({
 
 const styles = ref([
   "font-serif text-sm px-3 py-2 rounded-tr-lg rounded-bl-lg",
-  props.outlined ? "border-[#f63] border-solid bg-transparent border text-[#f63]" : " bg-[#f63]  text-white",
+  props.outlined
+    ? "border-[#f63] border-solid bg-transparent border text-[#f63]"
+    : " bg-[#f63]  text-white",
 ]);
 </script>
 

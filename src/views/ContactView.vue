@@ -3,8 +3,9 @@
     <h1>Get in touch</h1>
     <h2>Social Accounts</h2>
     <p>
-      You can find me in most social media sites (though I may not be active in posting). Hit me up if you ever like it
-      or follow me to keep in the touch with the following social media site.
+      You can find me in most social media sites (though I may not be active in
+      posting). Hit me up if you ever like it or follow me to keep in the touch
+      with the following social media site.
     </p>
     <InlineList class="not-prose">
       <ButtonComponent
@@ -43,13 +44,16 @@
         target="_blank"
         rel="noreferrer noopenner"
       >
-        <IconStackOverflow class="w-4 h-4 fill-white inline mr-2 align-middle" />
+        <IconStackOverflow
+          class="w-4 h-4 fill-white inline mr-2 align-middle"
+        />
         <span>Stack Overflow</span>
       </ButtonComponent>
     </InlineList>
     <h2>Send a Message</h2>
     <p>
-      Got a question, project needed to made or a lovely message that you want to send? Send me an email at
+      Got a question, project needed to made or a lovely message that you want
+      to send? Send me an email at
       <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.
     </p>
   </main>

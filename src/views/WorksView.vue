@@ -14,7 +14,10 @@
               <div class="aspect-[4/3] not-prose">
                 <img
                   class="aspect-[inherit] object-cover"
-                  :src="work.preview || 'https://bulma.io/images/placeholders/1280x960.png'"
+                  :src="
+                    work.preview ||
+                    'https://bulma.io/images/placeholders/1280x960.png'
+                  "
                 />
               </div>
             </template>
@@ -39,10 +42,13 @@
     </div>
     <h2>Need a project done?</h2>
     <p>
-      I'm up for any freelance work. If you think I'm the right person for your new project, feel free to hit me up!
+      I'm up for any freelance work. If you think I'm the right person for your
+      new project, feel free to hit me up!
     </p>
     <InlineList>
-      <ButtonComponent :is="RouterLink" :to="{ name: 'contact' }">Get in touch</ButtonComponent>
+      <ButtonComponent :is="RouterLink" :to="{ name: 'contact' }"
+        >Get in touch</ButtonComponent
+      >
     </InlineList>
   </main>
 </template>

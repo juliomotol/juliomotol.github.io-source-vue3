@@ -31,7 +31,10 @@ const route = useRoute();
 const workComponent = shallowRef<VNode | null>(null);
 const workFrontmatter = ref<WorkFrontmatter | null>(null);
 const page = usePage();
-const workSlug: string = typeof route.params.slug === "string" ? route.params.slug : route.params.slug[0];
+const workSlug: string =
+  typeof route.params.slug === "string"
+    ? route.params.slug
+    : route.params.slug[0];
 
 getWorkBySlug(workSlug).then((work) => {
   workComponent.value = work.default;
