@@ -16,9 +16,6 @@ const router = createRouter({
     },
     {
       path: "/works",
-      redirect: {
-        name: "works.index",
-      },
       children: [
         {
           path: "",
