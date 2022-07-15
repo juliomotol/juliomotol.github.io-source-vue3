@@ -2,7 +2,7 @@ name: Build and Deploy Vuejs App
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   deploy:
