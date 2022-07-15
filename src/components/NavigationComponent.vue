@@ -31,6 +31,7 @@
       <button
         class="flex items-center py-2 px-3"
         @click="preferences.toggleDarkMode()"
+        aria-label="Toggle dark mode"
       >
         <DarkmodeSwapper v-slot="{ isDarkMode }">
           <IconSun

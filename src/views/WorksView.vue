@@ -18,6 +18,7 @@
                     work.preview ||
                     'https://bulma.io/images/placeholders/1280x960.png'
                   "
+                  :alt="`${work.title} preview`"
                 />
               </div>
             </template>
