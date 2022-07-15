@@ -13,7 +13,7 @@
     >
       <NavigationComponent />
       <GithubCorner
-        repo="juliomotol/juliomotol.github.io-source-next"
+        repo="juliomotol/juliomotol.github.io-source-vue3"
         class="absolute top-14 right-0 z-10 lg:z-auto lg:top-0"
       />
       <div
